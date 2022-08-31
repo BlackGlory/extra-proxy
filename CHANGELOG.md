@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/BlackGlory/extra-proxy/compare/v0.1.1...v0.2.0) (2022-08-31)
+
+
+### ⚠ BREAKING CHANGES
+
+* Removed `unboxCallable`, `unboxNonCallable`
+
+### Features
+
+* remove `unboxCallable`, `unboxNonCallable` ([1c8c599](https://github.com/BlackGlory/extra-proxy/commit/1c8c59989ae25921c62963f881e9b8a5e3991553))
+
 ### [0.1.1](https://github.com/BlackGlory/extra-proxy/compare/v0.1.0...v0.1.1) (2022-08-31)
 
 
