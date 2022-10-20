@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/BlackGlory/extra-proxy/compare/v0.2.0...v0.2.1) (2022-10-20)
+
+
+### Features
+
+* add `applyPropertyDecorators` ([e922d2f](https://github.com/BlackGlory/extra-proxy/commit/e922d2f8cd1887eca3b2ec7c9f678e46efc251a4))
+
 ## [0.2.0](https://github.com/BlackGlory/extra-proxy/compare/v0.1.1...v0.2.0) (2022-08-31)
 
 
