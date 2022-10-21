@@ -20,7 +20,7 @@ type Decorator<T> = (value: T) => T
 
 function applyPropertyDecorators<T extends object, U>(
   obj: T
-, propertyKeys: PropertyKey[]
+, propertyKeys: Array<keyof T>
 , propertyDecorator: Decorator<U>
 ): T
 ```
