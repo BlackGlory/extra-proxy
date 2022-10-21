@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/BlackGlory/extra-proxy/compare/v0.2.1...v0.3.0) (2022-10-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* - Removed `Decorator`
+- Rewrote `applyPropertyDectorators`
+
+* rewrite `applyPropertyDecorators` ([b2df612](https://github.com/BlackGlory/extra-proxy/commit/b2df612ab72fa1a899e1765a0ddb98f9ead98b7e))
+
 ### [0.2.1](https://github.com/BlackGlory/extra-proxy/compare/v0.2.0...v0.2.1) (2022-10-20)
 
 
