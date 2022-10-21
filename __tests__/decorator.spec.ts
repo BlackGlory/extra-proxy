@@ -2,34 +2,65 @@ import { Decorator, applyPropertyDecorators } from '@src/decorator'
 
 describe('applyPropertyDecorators', () => {
   test('method', () => {
-    const obj = {
-      method1: jest.fn(() => 1)
-    , method2: jest.fn(() => 2)
+    class Tester {
+      value = 1
+
+      getValue() {
+        return this.value
+      }
+
+      getDoubleValue() {
+        return this.value * 2
+      }
     }
+    const instance = new Tester()
     const decorator: Decorator<() => number> = jest.fn(fn => {
-      return () => {
-        return fn() * 2
+      return function (this: Tester) {
+        return fn.apply(this) * 3
       }
     })
 
-    const proxy = applyPropertyDecorators(obj, ['method2'], decorator)
+    const proxy = applyPropertyDecorators(instance, ['getDoubleValue'], decorator)
 
-    expect(proxy.method1()).toBe(1)
-    expect(proxy.method2()).toBe(4)
+    expect(proxy.getValue()).toBe(1)
+    expect(proxy.getDoubleValue()).toBe(6)
     expect(decorator).toBeCalledTimes(1)
   })
 
   test('variable', () => {
-    const obj = {
-      variable1: 1
-    , variable2: 2
+    class Tester {
+      value = 1
+      doubleValue = this.value * 2
     }
-    const decorator: Decorator<number> = jest.fn(x => x * 2)
+    const instance = new Tester()
+    const decorator: Decorator<number> = jest.fn(variable => variable * 3)
     
-    const proxy = applyPropertyDecorators(obj, ['variable2'], decorator)
+    const proxy = applyPropertyDecorators(instance, ['doubleValue'], decorator)
 
-    expect(proxy.variable1).toBe(1)
-    expect(proxy.variable2).toBe(4)
+    expect(proxy.value).toBe(1)
+    expect(proxy.doubleValue).toBe(6)
+    expect(decorator).toBeCalledTimes(1)
+  })
+
+  test('accessor', () => {
+    class Tester {
+      _value = 1
+
+      get value() {
+        return this._value
+      }
+
+      get doubleValue() {
+        return this._value * 2
+      }
+    }
+    const instance = new Tester()
+    const decorator: Decorator<number> = jest.fn(accestor => accestor * 3)
+    
+    const proxy = applyPropertyDecorators(instance, ['doubleValue'], decorator)
+
+    expect(proxy.value).toBe(1)
+    expect(proxy.doubleValue).toBe(6)
     expect(decorator).toBeCalledTimes(1)
   })
 })
