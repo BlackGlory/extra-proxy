@@ -16,11 +16,14 @@ Returns a `Proxy` object whose first-level method's `this` is always bound to `t
 
 ### applyPropertyDecorators
 ```ts
-type Decorator<T> = (value: T) => T
-
-function applyPropertyDecorators<T extends object, U>(
-  obj: T
-, propertyKeys: Array<keyof T>
-, propertyDecorator: Decorator<U>
-): T
+function applyPropertyDecorators<
+  Obj extends object
+, Keys extends keyof Obj
+, OldValue
+, NewValue
+>(
+  obj: Obj
+, propertyKeys: Keys[]
+, propertyDecorator: (value: OldValue) => NewValue
+): MapPropsByKey<Obj, Keys, NewValue>
 ```

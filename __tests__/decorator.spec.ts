@@ -1,4 +1,4 @@
-import { Decorator, applyPropertyDecorators } from '@src/decorator'
+import { applyPropertyDecorators } from '@src/decorator'
 
 describe('applyPropertyDecorators', () => {
   test('method', () => {
@@ -13,14 +13,14 @@ describe('applyPropertyDecorators', () => {
         return this.value * 2
       }
     }
-    const instance = new Tester()
-    const decorator: Decorator<() => number> = jest.fn(fn => {
+    const obj = new Tester()
+    const decorator = jest.fn(fn => {
       return function (this: Tester) {
         return fn.apply(this) * 3
       }
     })
 
-    const proxy = applyPropertyDecorators(instance, ['getDoubleValue'], decorator)
+    const proxy = applyPropertyDecorators(obj, ['getDoubleValue'], decorator)
 
     expect(proxy.getValue()).toBe(1)
     expect(proxy.getDoubleValue()).toBe(6)
@@ -32,10 +32,10 @@ describe('applyPropertyDecorators', () => {
       value = 1
       doubleValue = this.value * 2
     }
-    const instance = new Tester()
-    const decorator: Decorator<number> = jest.fn(variable => variable * 3)
+    const obj = new Tester()
+    const decorator = jest.fn(variable => variable * 3)
     
-    const proxy = applyPropertyDecorators(instance, ['doubleValue'], decorator)
+    const proxy = applyPropertyDecorators(obj, ['doubleValue'], decorator)
 
     expect(proxy.value).toBe(1)
     expect(proxy.doubleValue).toBe(6)
@@ -54,10 +54,10 @@ describe('applyPropertyDecorators', () => {
         return this._value * 2
       }
     }
-    const instance = new Tester()
-    const decorator: Decorator<number> = jest.fn(accestor => accestor * 3)
+    const obj = new Tester()
+    const decorator = jest.fn(accestor => accestor * 3)
     
-    const proxy = applyPropertyDecorators(instance, ['doubleValue'], decorator)
+    const proxy = applyPropertyDecorators(obj, ['doubleValue'], decorator)
 
     expect(proxy.value).toBe(1)
     expect(proxy.doubleValue).toBe(6)
