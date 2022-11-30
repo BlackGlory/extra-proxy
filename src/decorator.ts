@@ -14,7 +14,7 @@ export function applyPropertyDecorators<
     get(target, propertyKey, receiver) {
       const value = Reflect.get(target, propertyKey, receiver)
       if (propertyKeys.includes(propertyKey as Keys)) {
-        return propertyDecorator(value)
+        return propertyDecorator(value as OldValue)
       } else {
         return value
       }

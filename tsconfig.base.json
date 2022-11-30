@@ -3,6 +3,7 @@
     "target": "ES2018"
   , "module": "CommonJS"
   , "strict": true
+  , "skipLibCheck": true
   , "noUnusedLocals": false
   , "noUnusedParameters": false
   , "baseUrl": "."
