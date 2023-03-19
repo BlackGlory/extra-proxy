@@ -1,4 +1,5 @@
-import { applyPropertyDecorators } from '@src/decorator'
+import { applyPropertyDecorators } from '@src/decorator.js'
+import { jest } from '@jest/globals'
 
 describe('applyPropertyDecorators', () => {
   test('method', () => {
@@ -14,7 +15,7 @@ describe('applyPropertyDecorators', () => {
       }
     }
     const obj = new Tester()
-    const decorator = jest.fn(fn => {
+    const decorator = jest.fn((fn: () => number) => {
       return function (this: Tester) {
         return fn.apply(this) * 3
       }
@@ -33,7 +34,7 @@ describe('applyPropertyDecorators', () => {
       doubleValue = this.value * 2
     }
     const obj = new Tester()
-    const decorator = jest.fn(variable => variable * 3)
+    const decorator = jest.fn((variable: number) => variable * 3)
     
     const proxy = applyPropertyDecorators(obj, ['doubleValue'], decorator)
 
@@ -55,7 +56,7 @@ describe('applyPropertyDecorators', () => {
       }
     }
     const obj = new Tester()
-    const decorator = jest.fn(accestor => accestor * 3)
+    const decorator = jest.fn((accestor: number) => accestor * 3)
     
     const proxy = applyPropertyDecorators(obj, ['doubleValue'], decorator)
 
