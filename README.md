@@ -27,3 +27,17 @@ function applyPropertyDecorators<
 , propertyDecorator: (value: OldValue) => NewValue
 ): MapPropsByKey<Obj, Keys, NewValue>
 ```
+
+### createPathCollector
+```ts
+type PathCollector<Obj> = {
+  [Key in keyof Obj]:
+    Obj[Key] extends object
+      ? PathCollector<Obj[Key]>
+      : () => Array<string | symbol>
+}
+
+function createPathCollector<T extends object>(): PathCollector<Obj>
+```
+
+Returns a `Proxy` object used to collect paths.

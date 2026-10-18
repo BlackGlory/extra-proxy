@@ -5,6 +5,8 @@ export default ts.config(
   js.configs.recommended
 , ...ts.configs.recommended
 , {
-    rules: {}
+    rules: {
+      '@typescript-eslint/no-unused-vars': 'off'
+    }
   }
 )
