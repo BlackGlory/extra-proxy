@@ -37,7 +37,7 @@ type PathCollector<Obj> = {
       : () => Array<string | symbol>
 }
 
-function createPathCollector<T extends object>(): PathCollector<Obj>
+function createPathCollector<T extends object>(): PathCollector<T>
 ```
 
 Returns a `Proxy` object used to collect paths.
