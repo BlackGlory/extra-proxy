@@ -60,4 +60,14 @@ describe('createPathCollector', () => {
       expect(result).toStrictEqual(['foo', 'bar'])
     })
   })
+
+  test('edge: function', () => {
+    const collector = createPathCollector<{
+      foo(bar: unknown): unknown
+    }>()
+
+    const result = collector.foo()
+
+    expect(result).toStrictEqual(['foo'])
+  })
 })
