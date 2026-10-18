@@ -38,7 +38,9 @@ describe('createPathCollector', () => {
   describe('by depth', () => {
     test('shallow', () => {
       const collector = createPathCollector<{
-        foo: unknown
+        foo: {
+          bar: unknown
+        }
       }>()
 
       const result = collector.foo()

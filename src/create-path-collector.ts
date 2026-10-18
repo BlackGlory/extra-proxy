@@ -3,7 +3,10 @@ import { NonEmptyArray, pass } from '@blackglory/prelude'
 type PathCollector<Obj extends object> = {
   [Key in keyof Obj]:
     Obj[Key] extends object
-      ? PathCollector<Obj[Key]>
+      ? (
+          (() => Array<string | symbol>)
+        & PathCollector<Obj[Key]>
+        )
       : () => Array<string | symbol>
 }
 
