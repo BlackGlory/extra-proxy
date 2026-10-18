@@ -30,7 +30,7 @@ function applyPropertyDecorators<
 
 ### createPathCollector
 ```ts
-type PathCollector<Obj> = {
+type PathCollector<Obj extends object> = {
   [Key in keyof Obj]:
     Obj[Key] extends object
       ? PathCollector<Obj[Key]>
