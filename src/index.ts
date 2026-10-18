@@ -1,2 +1,2 @@
 export * from './bind.js'
-export * from './decorator.js'
+export * from './apply-property-decorators.js'

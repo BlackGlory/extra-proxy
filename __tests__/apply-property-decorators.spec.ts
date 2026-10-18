@@ -1,5 +1,5 @@
 import { describe, test, expect, vi } from 'vitest'
-import { applyPropertyDecorators } from '@src/decorator.js'
+import { applyPropertyDecorators } from '@src/apply-property-decorators.js'
 
 describe('applyPropertyDecorators', () => {
   test('method', () => {
@@ -25,7 +25,7 @@ describe('applyPropertyDecorators', () => {
 
     expect(proxy.getValue()).toBe(1)
     expect(proxy.getDoubleValue()).toBe(6)
-    expect(decorator).toBeCalledTimes(1)
+    expect(decorator).toHaveBeenCalledTimes(1)
   })
 
   test('variable', () => {
@@ -40,7 +40,7 @@ describe('applyPropertyDecorators', () => {
 
     expect(proxy.value).toBe(1)
     expect(proxy.doubleValue).toBe(6)
-    expect(decorator).toBeCalledTimes(1)
+    expect(decorator).toHaveBeenCalledTimes(1)
   })
 
   test('accessor', () => {
@@ -62,6 +62,6 @@ describe('applyPropertyDecorators', () => {
 
     expect(proxy.value).toBe(1)
     expect(proxy.doubleValue).toBe(6)
-    expect(decorator).toBeCalledTimes(1)
+    expect(decorator).toHaveBeenCalledTimes(1)
   })
 })
