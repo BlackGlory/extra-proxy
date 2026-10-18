@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/BlackGlory/extra-proxy/compare/v0.4.1...v0.5.0) (2026-10-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node.js v16 => Node.js v22
+
+### Features
+
+* add `createPathCollector` ([4c22d05](https://github.com/BlackGlory/extra-proxy/commit/4c22d05df6436c226572ae7f671aa5ec45c03f80))
+* export `createPathCollector` ([f1945eb](https://github.com/BlackGlory/extra-proxy/commit/f1945eb7422744ea8d82eff8cafb07cf99dbd770))
+
+
+* upgrade dependencies ([2c3a632](https://github.com/BlackGlory/extra-proxy/commit/2c3a6325052383150d51fbea73d998fcfa7484e3))
+
 ### [0.4.1](https://github.com/BlackGlory/extra-proxy/compare/v0.4.0...v0.4.1) (2023-06-10)
 
 
