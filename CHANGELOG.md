@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.1](https://github.com/BlackGlory/extra-proxy/compare/v0.5.0...v0.5.1) (2026-10-18)
+
+
+### Bug Fixes
+
+* **create-path-collector:** types ([d3a1088](https://github.com/BlackGlory/extra-proxy/commit/d3a1088b03d8102f5efe8d50f5c0ee2ccf0a6ba0))
+
 ## [0.5.0](https://github.com/BlackGlory/extra-proxy/compare/v0.4.1...v0.5.0) (2026-10-18)
 
 
